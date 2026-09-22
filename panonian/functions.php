@@ -176,3 +176,28 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function panonian_register_menus() {
+	register_nav_menus( array(
+		'primary' => __( 'Primary Menu', 'panonian' ),
+	) );
+}
+add_action( 'after_setup_theme', 'panonian_register_menus' );
+
+/**
+ * Forcefully route shop and category archives to custom theme templates
+ */
+function panonian_force_shop_template( $template ) {
+    if ( is_shop() ) {
+        $custom_template = get_stylesheet_directory() . '/woocommerce/archive-product.php';
+        if ( file_exists( $custom_template ) ) {
+            return $custom_template;
+        }
+    } elseif ( is_product_taxonomy() ) {
+        $custom_cat_template = get_stylesheet_directory() . '/woocommerce/taxonomy-product_cat.php';
+        if ( file_exists( $custom_cat_template ) ) {
+            return $custom_cat_template;
+        }
+    }
+    return $template;
+}
+add_filter( 'template_include', 'panonian_force_shop_template', 99 );

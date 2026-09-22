@@ -967,3 +967,1286 @@ textarea {
 	margin-right: auto;
 	margin-bottom: 1.5em;
 }
+
+
+/* Header Base */
+.site-header {
+    background-color: rgba(13, 13, 13, 0.98);
+    border-bottom: 1px solid #333;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Inter', sans-serif;
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+/* Desktop Navigation */
+.nav-list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-list a:hover {
+    color: #E65C00;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #161616;
+    border: 1px solid #333;
+    list-style: none;
+    padding: 10px 0;
+    min-width: 200px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #222;
+}
+
+/* Header Actions & Cart */
+.header-actions {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.header-actions a {
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.cart-link {
+    color: #E65C00 !important;
+}
+
+.mobile-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #f5f5f5;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+    .mobile-toggle {
+        display: block;
+    }
+    
+    .main-nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #0d0d0d;
+        border-bottom: 1px solid #333;
+    }
+
+    .main-nav.active {
+        display: block;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .nav-list li a {
+        display: block;
+        padding: 15px 5%;
+        border-bottom: 1px solid #222;
+    }
+
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        border: none;
+        background-color: #1a1a1a;
+        padding: 0;
+    }
+    
+    .header-actions .lang-switch, 
+    .header-actions .login-link {
+        display: none;
+    }
+}
+
+/* --- CUSTOM FOOTER STYLES --- */
+.custom-footer {
+    background-color: #0d0d0d;
+    color: #a0a0a0;
+    padding: 60px 5% 20px;
+    border-top: 1px solid #222;
+    font-family: 'Inter', sans-serif;
+    margin-top: 50px;
+}
+
+.footer-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-decoration: none;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.footer-logo:hover {
+    color: #E65C00;
+}
+
+.footer-tagline {
+    color: #f5f5f5;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.footer-contact p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.footer-col h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    color: #f5f5f5;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 12px;
+}
+
+.footer-col ul li a,
+.footer-contact a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover,
+.footer-contact a:hover {
+    color: #E65C00;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 25px;
+    font-size: 0.85rem;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+/* --- SINGLE POST STYLES --- */
+.post-single-main {
+    background-color: #161616;
+    color: #f5f5f5;
+    font-family: 'Inter', sans-serif;
+    min-height: 80vh;
+}
+
+/* Post Hero Header */
+.post-hero {
+    position: relative;
+    min-height: 50vh;
+    display: flex;
+    align-items: flex-end;
+    padding: 60px 5%;
+    background-color: #0d0d0d;
+    overflow: hidden;
+}
+
+.post-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    z-index: 1;
+}
+
+.post-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(22, 22, 22, 1) 0%, rgba(22, 22, 22, 0.4) 100%);
+    z-index: 2;
+}
+
+.post-hero-container {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.post-meta-top {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.post-category a {
+    background-color: #E65C00;
+    color: #ffffff;
+    padding: 4px 10px;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.post-date {
+    color: #a0a0a0;
+}
+
+.post-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.post-author {
+    font-size: 0.85rem;
+    color: #a0a0a0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* Post Content Container */
+.post-content-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.post-entry-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #d0d0d0;
+}
+
+.post-entry-content p {
+    margin-bottom: 25px;
+}
+
+.post-entry-content h2, 
+.post-entry-content h3, 
+.post-entry-content h4 {
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 40px 0 20px;
+}
+
+.post-entry-content h2 { font-size: 2rem; }
+.post-entry-content h3 { font-size: 1.6rem; }
+
+.post-entry-content blockquote {
+    border-left: 4px solid #E65C00;
+    padding-left: 20px;
+    margin: 30px 0;
+    font-style: italic;
+    color: #f5f5f5;
+    background: #222222;
+    padding: 20px;
+}
+
+.post-entry-content img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #333;
+    margin: 20px 0;
+}
+
+/* Post Tags */
+.post-tags {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+}
+
+.post-tags .tags-title {
+    font-family: 'Oswald', sans-serif;
+    color: #a0a0a0;
+    margin-right: 10px;
+}
+
+.post-tags a {
+    color: #f5f5f5;
+    background: #222222;
+    padding: 4px 10px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    margin-right: 5px;
+    border: 1px solid #333;
+    transition: border-color 0.3s;
+}
+
+.post-tags a:hover {
+    border-color: #E65C00;
+    color: #E65C00;
+}
+
+/* Post Navigation */
+.post-nav-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 20px 0;
+}
+
+.nav-previous, .nav-next {
+    width: 48%;
+}
+
+.nav-next { text-align: right; }
+
+.nav-subtitle {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.8rem;
+    color: #E65C00;
+    margin-bottom: 5px;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #f5f5f5;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+}
+
+.nav-previous a:hover .nav-title, 
+.nav-next a:hover .nav-title {
+    color: #E65C00;
+}
+
+/* Comments Section Container */
+.post-comments-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+
+/* --- PRO STATIC PAGE STYLES --- */
+.panonian-page-article {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    min-height: 70vh;
+}
+
+/* Pro Hero Banner */
+.page-hero {
+    position: relative;
+    min-height: 36vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 5% 60px;
+    background-color: #0a0a0a;
+    overflow: hidden;
+    border-bottom: 2px solid #222;
+}
+
+.page-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.35) contrast(1.1);
+    transform: scale(1.02);
+    transition: transform 0.5s ease;
+    z-index: 1;
+}
+
+.page-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(18, 18, 18, 0.4) 0%, rgba(10, 10, 10, 0.95) 100%);
+    z-index: 2;
+}
+
+.page-hero-container {
+    position: relative;
+    z-index: 3;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Breadcrumbs */
+.panonian-breadcrumbs {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888888;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.panonian-breadcrumbs a {
+    color: #a0a0a0;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.panonian-breadcrumbs a:hover {
+    color: #E65C00;
+}
+
+.panonian-breadcrumbs .sep {
+    color: #E65C00;
+    margin: 0 6px;
+}
+
+.panonian-breadcrumbs .current {
+    color: #ffffff;
+}
+
+/* Page Titles & Subtitles */
+.page-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    line-height: 1.05;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 1.5px;
+    margin: 0 0 15px 0;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+}
+
+.page-subtitle {
+    font-size: 1.15rem;
+    color: #a0a0a0;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    line-height: 1.5;
+}
+
+.page-meta-bar {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    color: #666;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.page-meta-bar .meta-label {
+    color: #E65C00;
+}
+
+/* Main Content Layout & Gutenberg Breakouts */
+.page-content-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.entry-content {
+    font-size: 1.08rem;
+    line-height: 1.85;
+    color: #d4d4d4;
+}
+
+/* Alignwide & Alignfull support for WordPress Gutenberg Blocks */
+.entry-content .alignwide {
+    margin-left: calc(50% - 40vw);
+    margin-right: calc(50% - 40vw);
+    max-width: 80vw;
+    width: 80vw;
+}
+
+.entry-content .alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    max-width: 100vw;
+    width: 100vw;
+}
+
+/* Typography Hierarchy */
+.entry-content p {
+    margin-bottom: 24px;
+}
+
+.entry-content h2, 
+.entry-content h3, 
+.entry-content h4 {
+    font-family: 'Oswald', sans-serif;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 45px 0 20px;
+}
+
+.entry-content h2 {
+    font-size: 2.1rem;
+    border-left: 4px solid #E65C00;
+    padding-left: 15px;
+}
+
+.entry-content h3 {
+    font-size: 1.6rem;
+}
+
+.entry-content a {
+    color: #E65C00;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(230, 92, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+.entry-content a:hover {
+    color: #ff6a00;
+    border-bottom-color: #ff6a00;
+}
+
+/* Pro Blockquotes */
+.entry-content blockquote {
+    background: #1a1a1a;
+    border-left: 4px solid #E65C00;
+    margin: 35px 0;
+    padding: 25px 30px;
+    font-style: italic;
+    color: #f0f0f0;
+}
+
+/* Pro Tables */
+.entry-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 35px 0;
+    background-color: #181818;
+    border: 1px solid #282828;
+    font-size: 0.95rem;
+}
+
+.entry-content th, 
+.entry-content td {
+    padding: 14px 18px;
+    border: 1px solid #282828;
+}
+
+.entry-content th {
+    font-family: 'Oswald', sans-serif;
+    background-color: #0a0a0a;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.entry-content tr:nth-child(even) {
+    background-color: #141414;
+}
+
+/* Custom Page Links (Pagination within pages) */
+.page-links {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #282828;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.page-links-title {
+    font-family: 'Oswald', sans-serif;
+    color: #888;
+}
+
+.page-links .page-number {
+    background: #222;
+    color: #fff;
+    padding: 5px 12px;
+    border: 1px solid #333;
+    font-size: 0.85rem;
+}
+
+/* Admin Edit Link */
+.entry-footer {
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+}
+
+.edit-link a {
+    display: inline-block;
+    background: #1a1a1a;
+    color: #a0a0a0;
+    font-size: 0.75rem;
+    padding: 8px 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 1px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+}
+
+.edit-link a:hover {
+    background: #E65C00;
+    color: #ffffff;
+    border-color: #E65C00;
+}
+
+/* --- PRO HOMEPAGE ENHANCEMENTS --- */
+
+/* Machine Category Cards */
+.machine-card .wp-block-cover {
+    transition: all 0.4s ease;
+    border: 1px solid #333;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.machine-card .wp-block-cover__image-background {
+    transition: transform 0.6s ease;
+}
+
+.machine-card:hover .wp-block-cover {
+    border-color: #E65C00;
+}
+
+.machine-card:hover .wp-block-cover__image-background {
+    transform: scale(1.08);
+}
+
+.machine-card a::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 10;
+}
+
+/* WooCommerce Dynamic Grid Override for Dark Theme */
+.woocommerce ul.products li.product {
+    background: #121212 !important;
+    border: 1px solid #282828;
+    padding: 20px;
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.woocommerce ul.products li.product:hover {
+    border-color: #E65C00;
+    transform: translateY(-3px);
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    color: #f5f5f5 !important;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 1.2rem !important;
+    text-transform: uppercase;
+    padding: 15px 0 10px !important;
+}
+
+.woocommerce ul.products li.product .price {
+    color: #E65C00 !important;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.woocommerce ul.products li.product .button {
+    background-color: #222 !important;
+    color: #f5f5f5 !important;
+    border-radius: 0 !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-top: 15px !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.woocommerce ul.products li.product .button:hover {
+    background-color: #E65C00 !important;
+    color: #fff !important;
+}
+
+/* --- ABOUT US PAGE STYLES --- */
+
+/* Value Pillar Cards */
+.panonian-pillar-card {
+    transition: all 0.4s ease;
+    position: relative;
+    top: 0;
+}
+
+.panonian-pillar-card:hover {
+    border-color: #E65C00 !important;
+    background-color: #161616 !important;
+    top: -5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Media/Text Block Fixes for Full-Width */
+.wp-block-media-text {
+    border-top: 1px solid #222;
+}
+
+.wp-block-media-text__content {
+    padding: 8% 10% !important;
+}
+
+.wp-block-media-text__media img {
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    filter: grayscale(30%) contrast(1.2);
+}
+
+@media (max-width: 800px) {
+    .wp-block-media-text__content {
+        padding: 40px 5% !important;
+    }
+    .wp-block-media-text__media img {
+        min-height: 300px;
+    }
+}
+
+/* ==========================================================================
+   PRO STORE & WOOCOMMERCE CATALOG STYLING
+   ========================================================================== */
+
+/* Category Navigation Pills */
+.panonian-category-nav .nav-pill a {
+    transition: all 0.25s ease;
+}
+
+.panonian-category-nav .nav-pill:hover a {
+    color: #ffffff !important;
+    border-color: #E65C00 !important;
+    background-color: rgba(230, 92, 0, 0.15);
+}
+
+.panonian-category-nav .nav-pill.active a {
+    background-color: #E65C00 !important;
+    border-color: #E65C00 !important;
+    color: #ffffff !important;
+}
+
+/* Store Layout Wrapper */
+.panonian-shop-wrapper .woocommerce {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Sorting Bar & Result Count */
+.woocommerce-result-count {
+    color: #888888;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.woocommerce-ordering select {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    border: 1px solid #333333;
+    padding: 10px 15px;
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 0;
+    cursor: pointer;
+    margin-bottom: 30px;
+}
+
+.woocommerce-ordering select:focus {
+    outline: none;
+    border-color: #E65C00;
+}
+
+/* Products Grid */
+.woocommerce ul.products {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 0;
+    margin: 0 0 50px 0;
+    list-style: none;
+}
+
+.woocommerce ul.products::before,
+.woocommerce ul.products::after {
+    display: none !important;
+}
+
+/* Individual Product Card */
+.woocommerce ul.products li.product {
+    width: 100% !important;
+    margin: 0 !important;
+    float: none !important;
+    background-color: #1a1a1a;
+    border: 1px solid #282828;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.woocommerce ul.products li.product:hover {
+    border-color: #E65C00;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+/* Image Handling */
+.woocommerce ul.products li.product img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    background-color: #0d0d0d;
+    filter: brightness(0.95);
+    transition: filter 0.3s ease;
+}
+
+.woocommerce ul.products li.product:hover img {
+    filter: brightness(1.05);
+}
+
+/* Product Titles */
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 1.25rem !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #ffffff !important;
+    margin: 10px 0 8px 0 !important;
+    padding: 0 !important;
+    line-height: 1.3 !important;
+}
+
+/* Price Display */
+.woocommerce ul.products li.product .price {
+    color: #E65C00 !important;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem !important;
+    font-weight: 700;
+    margin-bottom: 20px !important;
+    display: block;
+}
+
+.woocommerce ul.products li.product .price del {
+    color: #666666 !important;
+    font-weight: 400;
+    margin-right: 8px;
+}
+
+.woocommerce ul.products li.product .price ins {
+    text-decoration: none;
+    color: #E65C00 !important;
+}
+
+/* Sale Badge */
+.woocommerce ul.products li.product .onsale {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: auto;
+    margin: 0;
+    background-color: #E65C00 !important;
+    color: #ffffff !important;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 4px 10px;
+    border-radius: 0 !important;
+    min-height: auto;
+    min-width: auto;
+    line-height: 1;
+    z-index: 2;
+}
+
+/* Action Buttons (Add to Cart / Select Options) */
+.woocommerce ul.products li.product .button {
+    background-color: #242424 !important;
+    color: #ffffff !important;
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 0.9rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    border: 1px solid #383838 !important;
+    padding: 12px 20px !important;
+    border-radius: 0 !important;
+    text-align: center;
+    transition: all 0.25s ease !important;
+    margin-top: auto !important;
+}
+
+.woocommerce ul.products li.product .button:hover {
+    background-color: #E65C00 !important;
+    border-color: #E65C00 !important;
+    color: #ffffff !important;
+}
+
+.woocommerce ul.products li.product .button.added::after {
+    margin-left: 8px;
+    content: "✓";
+}
+
+/* Store Pagination */
+.woocommerce nav.woocommerce-pagination {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+    display: inline-flex;
+    gap: 8px;
+    border: none !important;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.woocommerce nav.woocommerce-pagination ul li {
+    border: none !important;
+    float: none !important;
+    overflow: visible !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 10px;
+    background-color: #1a1a1a;
+    border: 1px solid #282828 !important;
+    color: #a0a0a0 !important;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:hover {
+    background-color: #242424;
+    border-color: #E65C00 !important;
+    color: #ffffff !important;
+}
+
+.woocommerce nav.woocommerce-pagination ul li span.current {
+    background-color: #E65C00 !important;
+    border-color: #E65C00 !important;
+    color: #ffffff !important;
+}
+
+/* Responsive Grid Adjustments */
+@media (max-width: 992px) {
+    .woocommerce ul.products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .woocommerce ul.products {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================================
+   PRO BLOG / DISPATCH ARCHIVE STYLING
+   ========================================================================== */
+
+/* Blog Grid Container */
+.panonian-blog-wrapper {
+    background-color: #121212;
+}
+
+/* Individual Post Card (The <li> element in the Query Loop) */
+.panonian-query-loop .wp-block-post {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0 !important;
+    background-color: #1a1a1a;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensures all cards in a row match height */
+}
+
+/* Hover effect for the entire card */
+.panonian-query-loop .wp-block-post:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+}
+
+.panonian-query-loop .wp-block-post:hover .wp-block-group {
+    border-color: #E65C00 !important;
+}
+
+/* Featured Image */
+.panonian-query-loop .wp-block-post-featured-image {
+    margin-bottom: 0 !important;
+    background-color: #0d0d0d;
+}
+
+.panonian-query-loop .wp-block-post-featured-image img {
+    border-bottom: 0 !important;
+    filter: brightness(0.85);
+    transition: filter 0.3s ease;
+}
+
+.panonian-query-loop .wp-block-post:hover .wp-block-post-featured-image img {
+    filter: brightness(1.05);
+}
+
+/* Inner Content Box (Border transition) */
+.panonian-query-loop .wp-block-post > .wp-block-group {
+    transition: border-color 0.3s ease;
+    flex-grow: 1; /* Pushes the Read More button to the bottom */
+}
+
+/* Post Categories & Date Links */
+.panonian-query-loop .wp-block-post-terms a {
+    color: #E65C00 !important;
+    text-decoration: none;
+}
+
+.panonian-query-loop .wp-block-post-date time {
+    color: #888888;
+}
+
+/* Post Title */
+.panonian-query-loop .wp-block-post-title {
+    font-family: 'Oswald', sans-serif !important;
+}
+
+.panonian-query-loop .wp-block-post-title a {
+    color: #ffffff !important;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.panonian-query-loop .wp-block-post-title a:hover {
+    color: #E65C00 !important;
+}
+
+/* Post Excerpt */
+.panonian-query-loop .wp-block-post-excerpt {
+    color: #cccccc;
+    margin-bottom: 25px !important;
+}
+
+.panonian-query-loop .wp-block-post-excerpt__excerpt {
+    margin: 0;
+}
+
+/* Read More Button */
+.panonian-query-loop .wp-block-read-more {
+    font-family: 'Oswald', sans-serif !important;
+    background-color: transparent !important;
+    color: #ffffff !important;
+    border-radius: 0 !important;
+    transition: all 0.25s ease !important;
+    display: inline-block;
+    align-self: flex-start;
+}
+
+.panonian-query-loop .wp-block-post:hover .wp-block-read-more,
+.panonian-query-loop .wp-block-read-more:hover {
+    background-color: #E65C00 !important;
+    border-color: #E65C00 !important;
+}
+
+/* Query Pagination (Matches WooCommerce pagination style) */
+.panonian-query-loop .wp-block-query-pagination {
+    margin-top: 60px;
+    border-top: 1px solid #282828;
+    padding-top: 40px;
+}
+
+.panonian-query-loop .wp-block-query-pagination a,
+.panonian-query-loop .wp-block-query-pagination span.current {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 42px;
+    padding: 0 10px;
+    background-color: #1a1a1a;
+    border: 1px solid #282828;
+    color: #a0a0a0;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.panonian-query-loop .wp-block-query-pagination a:hover {
+    background-color: #242424;
+    border-color: #E65C00;
+    color: #ffffff;
+}
+
+.panonian-query-loop .wp-block-query-pagination span.current {
+    background-color: #E65C00;
+    border-color: #E65C00;
+    color: #ffffff;
+}
+
+/* Responsive Overrides for Query Loop Columns */
+@media (max-width: 992px) {
+    .panonian-query-loop > ul.wp-block-post-template {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .panonian-query-loop > ul.wp-block-post-template {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* WordPress Native Dropdown Mapping */
+.nav-list .menu-item-has-children {
+    position: relative;
+}
+
+.nav-list .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 99;
+    background-color: #1a1a1a; /* Match your header background */
+    min-width: 200px;
+    padding: 10px 0;
+    list-style: none;
+}
+
+.nav-list .menu-item-has-children:hover > .sub-menu {
+    display: block;
+}
+
+.nav-list .sub-menu li a {
+    padding: 10px 20px;
+    display: block;
+    white-space: nowrap;
+}
+
+/* Apply background color to the entire page */
+html, 
+body {
+    background-color: #121212; /* Replace with your preferred color */
+    color: #f5f5f5;           /* Optional: Sets global text color for contrast */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;         /* Ensures background covers full height even if content is short */
+}

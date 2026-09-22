@@ -2,13 +2,10 @@
 /**
  * The header for our theme
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
- *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package panonian
  */
-
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -25,35 +22,72 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'panonian' ); ?></a>
 
+	<!-- CUSTOM RUGGED MINIMALISM HEADER -->
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<div class="header-container">
+			<!-- Dynamic Home URL for Logo -->
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo" rel="home">PANONIAN.</a>
+			
+			<nav class="main-nav">
 				<?php
-			else :
+				// Output the dynamic WordPress menu
+				if ( has_nav_menu( 'primary' ) ) {
+					wp_nav_menu( array(
+						'theme_location' => 'primary',
+						'container'      => false, // Removes the default <div> wrapper
+						'menu_class'     => 'nav-list', // Applies your custom CSS class to the <ul>
+						'fallback_cb'    => false,
+					) );
+				} else {
+					// Fallback message if no menu is assigned in the dashboard yet
+					echo '<ul class="nav-list"><li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '">Assign a menu in Appearance > Menus</a></li></ul>';
+				}
 				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$panonian_description = get_bloginfo( 'description', 'display' );
-			if ( $panonian_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $panonian_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+			</nav>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'panonian' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
+			<div class="header-actions">
+				<!-- Static placeholder: Use your translation plugin (like WPML/Polylang) switcher here later -->
+				<a href="#" class="lang-switch">EN | DE</a>
+				
+				<!-- Dynamic WooCommerce Login/Account Link -->
+				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+					<a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" class="login-link">
+						<?php is_user_logged_in() ? esc_html_e( 'Account', 'panonian' ) : esc_html_e( 'Login', 'panonian' ); ?>
+					</a>
+				<?php else : ?>
+					<a href="<?php echo esc_url( wp_login_url() ); ?>" class="login-link">Login</a>
+				<?php endif; ?>
+
+				<!-- Dynamic WooCommerce Cart Link & Item Count -->
+				<?php if ( class_exists( 'WooCommerce' ) ) : ?>
+					<a href="<?php echo esc_url( wc_get_cart_url() ); ?>" class="cart-link">
+						CART (<?php echo WC()->cart->get_cart_contents_count(); ?>)
+					</a>
+				<?php else : ?>
+					<a href="#" class="cart-link">CART (0)</a>
+				<?php endif; ?>
+
+				<button class="mobile-toggle" aria-label="<?php esc_attr_e( 'Toggle navigation', 'panonian' ); ?>">☰</button>
+			</div>
+		</div>
 	</header><!-- #masthead -->
+
+	<!-- Mobile Menu Script -->
+	<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const mobileToggle = document.querySelector(".mobile-toggle");
+		const mainNav = document.querySelector(".main-nav");
+
+		if (mobileToggle && mainNav) {
+			mobileToggle.addEventListener("click", () => {
+				mainNav.classList.toggle("active");
+				// Swap icon between hamburger and close
+				if (mainNav.classList.contains("active")) {
+					mobileToggle.innerHTML = "✕"; 
+				} else {
+					mobileToggle.innerHTML = "☰";
+				}
+			});
+		}
+	});
+	</script>
